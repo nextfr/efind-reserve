@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EFIND Reserve | Investir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+    .serif { font-family: 'Cinzel', serif; }
+    .gold-gradient { background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #B38728 70%, #AA771C 100%); }
+    .gold-text { background: linear-gradient(135deg, #BF953F, #FCF6BA, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 w-full z-[100] glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo-jeton.png" alt="EFIND" class="h-10 w-auto">
+        <span class="serif text-xl font-bold italic">EFIND <span class="gold-text">RESERVE</span></span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8 text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">
+        <a href="index.html">Accueil</a>
+        <a href="impact.html">Impact</a>
+        <a href="economics.html">Économie</a>
+      </div>
+      <button class="gold-gradient text-black text-[10px] font-black px-8 py-3 rounded-full uppercase">Investir</button>
+    </div>
+  </nav>
+
+  <section class="pt-40 pb-20 px-6 min-h-screen">
+    <div class="max-w-2xl mx-auto">
+      <div class="glass p-10 rounded-[2.5rem] border border-yellow-500/20 shadow-2xl">
+        <h1 class="serif text-3xl gold-text text-center mb-10 italic tracking-widest">Dashboard Investisseur</h1>
+        
+        <div class="space-y-6 mb-12 text-center">
+          <div class="bg-black/40 p-6 rounded-2xl border border-white/5">
+            <p class="text-[10px] text-gray-500 uppercase mb-2">Prix Actuel de l'E-OURO</p>
+            <p class="text-3xl font-bold">$0.725 <span class="text-emerald-500 text-sm ml-2">+2.4%</span></p>
+          </div>
+          <div class="bg-black/40 p-6 rounded-2xl border border-white/5">
+            <p class="text-[10px] text-gray-500 uppercase mb-2">Adresse de Trésorerie (BEP20)</p>
+            <code class="text-[10px] text-yellow-500 break-all">0x9e36d8681eaFF87e43d5D14AF4685B992E9156Ce</code>
+          </div>
+        </div>
+
+        <button class="w-full gold-gradient text-black font-black py-5 rounded-2xl text-xs tracking-[0.2em] uppercase hover:scale-[1.02] transition shadow-lg">
+          Connecter Wallet (Rabby / MetaMask)
+        </button>
+        
+        <p class="text-[9px] text-gray-600 text-center mt-8 uppercase tracking-widest">Sécurité Multi-Sig 2-sur-3 • EFIND Treasury</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
