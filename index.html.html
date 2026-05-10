@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EFIND Reserve | Accueil</title>
+  
+  <title>EFIND Reserve | Actifs Réels Tokenisés (RWA) Côte d'Ivoire</title>
+  <meta name="description" content="Investissez dans l'Or et le Cacao ivoiriens via la blockchain. EFIND Reserve sécurise la richesse physique par le protocole Ouroboros E708.">
+  <meta property="og:title" content="EFIND Reserve | Excellence RWA">
+  <meta property="og:description" content="Tokenisation souveraine d'actifs physiques. Audité, Transparent, Réel.">
+  <meta property="og:image" content="logo-jeton.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+  
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+    :root { --gold: #BF953F; }
+    body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; -webkit-font-smoothing: antialiased; }
     .serif { font-family: 'Cinzel', serif; }
     .gold-gradient { background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #B38728 70%, #AA771C 100%); }
     .gold-text { background: linear-gradient(135deg, #BF953F, #FCF6BA, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .reveal.active { opacity: 1; transform: translateY(0); }
     #menu-toggle:checked ~ #mobile-menu { display: flex; }
   </style>
@@ -22,51 +30,140 @@
 
   <nav class="fixed top-0 w-full z-[100] glass border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="logo-jeton.png" alt="EFIND" class="h-10 w-auto" onerror="this.src='https://via.placeholder.com/40/BF953F/000000?text=ER'">
-        <span class="serif text-xl font-bold italic">EFIND <span class="gold-text">RESERVE</span></span>
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo-jeton.png" alt="EFIND Logo" class="h-10 w-auto transform group-hover:scale-110 transition duration-300" onerror="this.src='https://via.placeholder.com/40/BF953F/000000?text=ER'">
+        <span class="serif text-xl tracking-widest font-bold hidden sm:block">EFIND <span class="gold-text">RESERVE</span></span>
       </a>
-      <div class="hidden lg:flex items-center gap-8 text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">
-        <a href="index.html" class="gold-text">Accueil</a>
-        <a href="impact.html" class="hover:text-white">Impact</a>
-        <a href="economics.html" class="hover:text-white">Économie</a>
-        <a href="whitepaper.pdf" class="border-b border-yellow-500/30 pb-1">Whitepaper</a>
+
+      <div class="hidden lg:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">
+        <a href="#processus" class="hover:text-yellow-500 transition">Confiance</a>
+        <a href="#actifs" class="hover:text-yellow-500 transition">Actifs</a>
+        <a href="#impact" class="hover:text-yellow-500 transition">Impact</a>
+        <a href="#tokenomics" class="hover:text-yellow-500 transition">Economics</a>
+        <a href="whitepaper.pdf" class="gold-text border-b border-yellow-500/30 pb-1">Whitepaper</a>
       </div>
-      <a href="investir.html" class="gold-gradient text-black text-[10px] font-black px-8 py-3 rounded-full uppercase">Investir</a>
+
+      <div class="flex items-center gap-4">
+        <button class="gold-gradient text-black text-[10px] font-black px-8 py-3 rounded-full hidden sm:block uppercase tracking-tighter">Investir</button>
+        <label for="menu-toggle" class="lg:hidden cursor-pointer p-2"><i class="fa-solid fa-bars-staggered text-2xl gold-text"></i></label>
+      </div>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black flex-col items-center justify-center gap-10 z-[110]">
+      <label for="menu-toggle" class="absolute top-8 right-8 text-4xl gold-text cursor-pointer">&times;</label>
+      <a href="#processus" class="serif text-2xl" onclick="document.getElementById('menu-toggle').checked=false">Confiance</a>
+      <a href="#actifs" class="serif text-2xl" onclick="document.getElementById('menu-toggle').checked=false">Actifs</a>
+      <a href="#impact" class="serif text-2xl" onclick="document.getElementById('menu-toggle').checked=false">Impact</a>
+      <button class="gold-gradient text-black px-10 py-4 rounded-full font-bold uppercase">Connect Wallet</button>
     </div>
   </nav>
 
-  <section class="min-h-screen flex items-center px-6 pt-20">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <section class="relative min-h-screen flex items-center pt-24 pb-12">
+    <div class="absolute inset-0 z-0"><div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-900/10 blur-[120px] rounded-full"></div></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
       <div class="reveal">
-        <h1 class="serif text-5xl md:text-7xl mb-6 italic leading-tight">La Réserve <br> <span class="gold-text">Souveraine.</span></h1>
-        <p class="text-gray-400 text-lg mb-10 max-w-xl">L'Or et le Cacao de Côte d'Ivoire, sécurisés par la blockchain pour une stabilité millénaire.</p>
-        <div class="flex gap-4">
-          <a href="investir.html" class="gold-gradient text-black font-black px-10 py-5 rounded-xl uppercase text-xs tracking-widest">Acheter E-OURO</a>
+        <span class="gold-text serif tracking-[0.4em] text-xs mb-4 block uppercase font-bold">Standard de Réserve Africain</span>
+        <h1 class="serif text-5xl md:text-7xl mb-6 leading-[1.1] tracking-tight">
+          L'Héritage Physique, <br> <span class="italic font-light opacity-80">La Vérité On-Chain.</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-xl mb-10 font-light leading-relaxed">
+          EFIND Reserve fusionne la stabilité millénaire de l'Or et du Cacao avec la transparence de la blockchain.
+        </p>
+        <div class="flex flex-wrap gap-5">
+          <a href="#investir" class="gold-gradient text-black font-black px-10 py-5 rounded-xl shadow-xl text-sm tracking-widest uppercase">Lancer l'App</a>
+          <a href="whitepaper.pdf" class="glass px-10 py-5 rounded-xl hover:bg-white/5 transition-all text-sm font-bold tracking-widest uppercase">Audit & Dossier</a>
         </div>
       </div>
-      <div class="relative flex justify-center reveal delay-200">
-        <img src="logo-jeton.png" alt="Token" class="w-full max-w-md drop-shadow-[0_0_50px_rgba(191,149,63,0.3)]">
+      <div class="relative reveal delay-200 flex justify-center">
+        <div class="absolute inset-0 gold-gradient blur-[100px] opacity-20 animate-pulse rounded-full"></div>
+        <img src="logo-jeton.png" alt="EFIND Token" class="relative z-10 w-full max-w-md drop-shadow-[0_0_50px_rgba(191,149,63,0.5)]" onerror="this.src='https://via.placeholder.com/400/BF953F/000000?text=E-OURO'">
       </div>
     </div>
   </section>
 
   <section class="py-12 bg-black border-y border-white/5">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><p class="text-[10px] text-gray-500 uppercase mb-1">Or sous garde</p><p class="text-xl serif gold-text italic">84.50 kg</p></div>
-      <div><p class="text-[10px] text-gray-500 uppercase mb-1">Cacao audité</p><p class="text-xl serif gold-text italic">1,240 T</p></div>
-      <div><p class="text-[10px] text-gray-500 uppercase mb-1">TVL</p><p class="text-xl serif italic">$7.25M</p></div>
-      <div><p class="text-[10px] text-gray-500 uppercase mb-1">Dernier Audit</p><p class="text-xl serif text-emerald-500 italic font-bold">Récent</p></div>
+      <div class="reveal">
+        <p class="text-[10px] text-gray-500 uppercase mb-1">Or sous garde</p>
+        <p class="text-xl serif gold-text">84.50 kg</p>
+      </div>
+      <div class="reveal delay-100">
+        <p class="text-[10px] text-gray-500 uppercase mb-1">Cacao audité</p>
+        <p class="text-xl serif gold-text">1,240 T</p>
+      </div>
+      <div class="reveal delay-200">
+        <p class="text-[10px] text-gray-500 uppercase mb-1">Valeur Totale Bloquée</p>
+        <p class="text-xl serif">$7.25M</p>
+      </div>
+      <div class="reveal delay-300">
+        <p class="text-[10px] text-gray-500 uppercase mb-1">Dernier Audit</p>
+        <p class="text-xl serif text-emerald-500">10 Mai 2026</p>
+      </div>
     </div>
   </section>
 
-  <footer class="py-10 text-center text-gray-700 text-[10px] tracking-widest uppercase">
-    © 2026 EFIND SARL | Abidjan, Côte d'Ivoire
+  <section id="impact" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1 reveal">
+        <div class="aspect-video glass rounded-3xl flex items-center justify-center p-10">
+          <div class="text-center">
+            <h4 class="serif text-2xl mb-4 gold-text">Développement Souverain</h4>
+            <p class="text-gray-400 text-sm italic">"Nous ne faisons pas que tokeniser, nous finançons directement l'infrastructure minière et agricole de Côte d'Ivoire."</p>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 reveal delay-100">
+        <h2 class="serif text-4xl mb-6">Impact <span class="gold-text">Réel</span></h2>
+        <p class="text-gray-400 mb-8 leading-relaxed">
+          EFIND Reserve réinjecte une portion des profits du protocole dans l'optimisation des coopératives locales. En investissant, vous participez à la valorisation durable du sol ivoirien.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex gap-4 items-center"><i class="fa-solid fa-check text-yellow-500"></i> Traçabilité totale du champ au wallet.</li>
+          <li class="flex gap-4 items-center"><i class="fa-solid fa-check text-yellow-500"></i> Soutien direct aux artisans miniers certifiés.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="processus" class="py-32 bg-[#030303] border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="serif text-3xl text-center mb-16">Questions Fréquentes</h2>
+      <div class="space-y-6">
+        <div class="glass p-6 rounded-2xl reveal">
+          <h4 class="font-bold mb-2">Comment la réserve est-elle vérifiée ?</h4>
+          <p class="text-gray-500 text-sm">Chaque actif physique fait l'objet d'un certificat de dépôt audité mensuellement par EFIND SARL et ses partenaires logistiques agréés.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl reveal">
+          <h4 class="font-bold mb-2">Puis-je sortir du protocole à tout moment ?</h4>
+          <p class="text-gray-500 text-sm">Oui. La liquidité est assurée par le protocole Ouroboros E708 qui maintient une pool constante pour permettre les rachats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-20 border-t border-white/5 bg-black">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="text-center md:text-left">
+        <div class="serif text-xl font-bold mb-2">EFIND <span class="gold-text">RESERVE</span></div>
+        <p class="text-[9px] text-gray-600 tracking-widest uppercase">Fintech RWA • Abidjan • Côte d'Ivoire</p>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-[10px] text-gray-700 font-mono uppercase">RCCM : CI-ABJ-03-2021-B13-05708</p>
+        <div class="flex gap-4 justify-center md:justify-end mt-4 text-gray-500 text-sm">
+          <a href="#" class="hover:text-yellow-500">Mentions Légales</a>
+          <a href="#" class="hover:text-yellow-500">Politique de Confidentialité</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    const obs = new IntersectionObserver((es) => es.forEach(e => e.isIntersecting && e.target.classList.add('active')));
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
