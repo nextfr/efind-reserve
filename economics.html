@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EFIND Reserve | Économie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; }
+    .serif { font-family: 'Cinzel', serif; }
+    .gold-text { background: linear-gradient(135deg, #BF953F, #FCF6BA, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 w-full z-[100] glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo-jeton.png" alt="EFIND" class="h-10 w-auto">
+        <span class="serif text-xl font-bold italic">EFIND <span class="gold-text">RESERVE</span></span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8 text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">
+        <a href="index.html">Accueil</a>
+        <a href="impact.html">Impact</a>
+        <a href="economics.html" class="gold-text">Économie</a>
+      </div>
+      <a href="investir.html" class="bg-yellow-600 text-black text-[10px] font-black px-8 py-3 rounded-full uppercase">Investir</a>
+    </div>
+  </nav>
+
+  <section class="pt-40 pb-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="serif text-4xl text-center mb-16 italic">Modèle <span class="gold-text">E708</span></h1>
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="glass p-8 rounded-2xl border-l-2 border-yellow-600">
+          <h4 class="text-xs uppercase text-gray-500 mb-2">Buyback</h4>
+          <p class="text-3xl font-bold">35%</p>
+          <p class="text-[10px] mt-4 text-gray-500">Des profits rachetés et brûlés.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl border-l-2 border-yellow-600">
+          <h4 class="text-xs uppercase text-gray-500 mb-2">Trésorerie</h4>
+          <p class="text-3xl font-bold">Midnight</p>
+          <p class="text-[10px] mt-4 text-gray-500">Injection quotidienne à minuit.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl border-l-2 border-yellow-600">
+          <h4 class="text-xs uppercase text-gray-500 mb-2">Audit</h4>
+          <p class="text-3xl font-bold">Immuable</p>
+          <p class="text-[10px] mt-4 text-gray-500">Stockage 100% physique.</p>
+        </div>
+      </div>
+      <div class="glass p-10 rounded-3xl">
+        <h2 class="serif text-2xl mb-6 italic gold-text">Retombées Économiques</h2>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Le protocole EFIND génère de la valeur par la valorisation des actifs réels (RWA). Contrairement aux monnaies classiques, notre jeton est adossé à des stocks physiques dont la valeur est universelle. Les frais de réseau sont réinvestis pour augmenter continuellement la réserve de trésorerie.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
